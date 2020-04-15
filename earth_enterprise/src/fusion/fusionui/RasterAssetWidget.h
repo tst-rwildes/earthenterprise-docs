@@ -28,7 +28,7 @@ namespace qt_fusion {
   class QDateWrapper;
 }
 class AssetBase;
-class QFileDialog;
+class Q3FileDialog;
 class QStringList;
 class RasterProductImportRequest;
 
@@ -50,7 +50,7 @@ class RasterAssetWidget : public RasterAssetWidgetBase {
   virtual void CustomConversion(const QString& str);
 
  private:
-  QFileDialog* FileDialog();
+  Q3FileDialog* FileDialog();
   enum MaskType { AutoMask, HaveMask, NoMask };
   MaskType GetMaskType() const;
   void AdjustMaskType();
@@ -67,9 +67,10 @@ class RasterAssetWidget : public RasterAssetWidgetBase {
   AssetDefs::Type AssetType() const { return asset_type_; }
   virtual AssetBase* GetAssetBase() const = 0;
 
-  AssetDefs::Type asset_type_;
-  QFileDialog* file_dialog_;
+  AssetDefs::Type asset_type_;s
+  Q3FileDialog* file_dialog_;
   std::vector<std::uint32_t> provider_id_list_;
+
   int last_conv_index_;
   int last_mosaic_fill_index_;
   qt_fusion::QDateWrapper* acquisition_date_wrapper_;

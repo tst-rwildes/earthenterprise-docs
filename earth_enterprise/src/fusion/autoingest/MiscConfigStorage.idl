@@ -35,9 +35,6 @@ class MiscConfigStorage {
   std::uint64_t       MaxVersionCacheMemorySize = std::uint64_t(2415919104);
 
   bool         LimitMemoryUtilization = false;
-
-  // The cache will only be pruned if the size of the dirty map is less than or equal to this fraction of the cache.
-  float         PrunePercentage = float(100);
   
   bool         GenerateProductPreviews = true;
   unsigned int         MutexTimedWaitSec = uint(30);

@@ -13,7 +13,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 #include <Qt/q3table.h>
 using QTable = Q3Table;
 #include <Qt/qmessagebox.h>
@@ -53,10 +52,11 @@ void LocaleManager::accept() {
 
   if (!localeset_.Save()) {
     QMessageBox::critical(
-        this, tr("Error"),
+        dynamic_cast<QWidget*>(this), tr("Error"),
         tr("Unable to save locales.\n"
            "Check console for more information."),
-        tr("OK"), 0, 0, 0);
+        tr("OK"), QString(), QString(),
+        0, 0);
   } else {
     LocaleManagerBase::accept();
   }
