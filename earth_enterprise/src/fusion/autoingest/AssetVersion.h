@@ -48,6 +48,9 @@ struct InputAndChildStateData {
   WaitingFor waitingFor;
 };
 
+class AssetVersionStorage;
+class StorageManaged;
+
 /******************************************************************************
  ***  AssetVersionImpl
  ***

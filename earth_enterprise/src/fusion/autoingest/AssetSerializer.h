@@ -5,6 +5,7 @@
 #include "common/khxml/khxml.h"
 #include "common/khxml/khdom.h"
 #include "autoingest/.idl/storage/AssetDefs.h"
+#include "fusion/autoingest/AssetFactory.h"
 
 template<class AssetType>
 class AssetSerializerInterface {
@@ -60,14 +61,14 @@ class AssetSerializerLocalXML : public AssetSerializerInterface<AssetType>
               .arg(ToQString(filename), QString::fromUtf8(e.what())));
           } catch (...) {
             AssetThrowPolicy::WarnOrThrow(kh::tr("Unable to load ")
-                  + filename);
+                  + filename.c_str());
           }
         } else {
           AssetThrowPolicy::WarnOrThrow(kh::tr("Unable to read ")
-                + filename);
+                + filename.c_str());
         }
       } else {
-        AssetThrowPolicy::WarnOrThrow(kh::tr("No such file: ") + filename);
+        AssetThrowPolicy::WarnOrThrow(kh::tr("No such file: ") + filename.c_str());
       }
 
       if (!result) {
