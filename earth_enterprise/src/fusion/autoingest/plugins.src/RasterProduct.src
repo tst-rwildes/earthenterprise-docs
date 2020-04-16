@@ -79,15 +79,9 @@ void GetProviderFromMeta(RasterProductConfig &config, khMetaData &meta) {
   }
 }
 
-<<<<<<< HEAD
-uint GetMaxLevelFromMeta(const khMetaData& meta) {
-  uint prodMaxLevel = 0;
-  FromString(meta.GetValue("maxlevel").toUtf8().constData(), prodMaxLevel);
-=======
 unsigned int GetMaxLevelFromMeta(const khMetaData& meta) {
   unsigned int prodMaxLevel = 0;
-  FromString(meta.GetValue("maxlevel"), prodMaxLevel);
->>>>>>> upstream/qt4_migration
+  FromString(meta.GetValue("maxlevel").toUtf8().constData(), prodMaxLevel);
   return prodMaxLevel;
 }
 

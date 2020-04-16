@@ -590,11 +590,7 @@ pyrio::Writer::Writer(const std::string &filename,
 {
   if (compressMode == CompressJPEG &&
       componentType != khTypes::UInt8) {
-<<<<<<< HEAD
-    throw khException(kh::tr("Error writing %1: JPEG compression with non uint8 pixel type").arg(filename.c_str()));
-=======
-    throw khException(kh::tr("Error writing %1: JPEG compression with non std::uint8_t pixel type").arg(filename));
->>>>>>> upstream/qt4_migration
+    throw khException(kh::tr("Error writing %1: JPEG compression with non std::uint8_t pixel type").arg(filename.c_str()));
   }
 
   header.numComponents  = numComponents;
