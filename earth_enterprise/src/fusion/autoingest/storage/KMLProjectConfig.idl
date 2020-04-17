@@ -15,6 +15,7 @@
 
 #include <string>
 #include <vector>
+#include <limits.h>
 #include <khTypes.h>
 #include <khMetaData.h>
 #requiresgetheapusage
